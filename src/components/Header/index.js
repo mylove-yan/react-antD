@@ -46,8 +46,8 @@ export default class Header extends React.Component {
                     </Col>
                 </Row>
                 <Row className="breadcrumb">
-                    <Col span={4} className="breadcrumb-titlte">
-                        首页
+                    <Col span={4} className="breadcrumb-title">
+                         首页
                     </Col>
                     <Col span={20} className="weather">
                         <span className="date">{this.state.sysTime}</span>
