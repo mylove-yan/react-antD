@@ -139,7 +139,7 @@ export default class BasicTable extends React.Component{
                     let config  = {
                         '1':'咸鱼一条',
                         '2':'风华浪子',
-                        '3':'北大才子',
+                        '3':'北大才 子',
                         '4':'百度FE',
                         '5':'创业者'
                     }
@@ -229,7 +229,7 @@ export default class BasicTable extends React.Component{
                         pagination={false}
                     />
                 </Card>
-                <Card title="Mock-单选" style={{ margin: '10px 0' }}>
+                <Card title="Mock-多选" style={{ margin: '10px 0' }}>
                     <div style={{marginBottom:10}}>
                         <Button onClick={this.handleDelete}>删除</Button>
                     </div>

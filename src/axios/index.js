@@ -2,7 +2,6 @@ import JsonP from 'jsonp'
 import axios from 'axios'
 import { Modal } from 'antd'
 import Utils from './../utils/utils'
-
 export default class Axios {
 
     static requestList(_this,url,params,isMock){
@@ -34,7 +33,7 @@ export default class Axios {
             JsonP(options.url, {
                 param: 'callback'
             }, function (err, response) {
-                if (response.status === 'success') {
+                if (response.status == 'success') {
                     resolve(response);
                 } else {
                     reject(response.messsage);
@@ -51,9 +50,9 @@ export default class Axios {
         }
         let baseApi = '';
         if(options.isMock){
-            baseApi = 'https://www.easy-mock.com/mock/5a7278e28d0c633b9c4adbd7/api';
+            baseApi = 'https://www.easy-mock.com/mock/5f9d22800bf9ee03009408a5/reactapi';
         }else{
-            baseApi = 'https://www.easy-mock.com/mock/5a7278e28d0c633b9c4adbd7/api';
+            baseApi = 'https://www.easy-mock.com/mock/5f9d22800bf9ee03009408a5/reactapi';
         }
         return new Promise((resolve,reject)=>{
             axios({
@@ -67,9 +66,9 @@ export default class Axios {
                     loading = document.getElementById('ajaxLoading');
                     loading.style.display = 'none';
                 }
-                if (response.status === '200'){
+                if (response.status == '200'){
                     let res = response.data;
-                    if (res.code === '0'){
+                    if (res.code == '0'){
                         resolve(res);
                     }else{
                         Modal.info({

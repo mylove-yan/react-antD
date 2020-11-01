@@ -4,7 +4,7 @@ export default {
         let date = new Date(time);
         return date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate()+' '+date.getHours()+':'+date.getMinutes()+':'+date.getSeconds();
     },
-    agination(data,callback){
+    pagination(data,callback){
         return {
             onChange:(current)=>{
                 callback(current)
