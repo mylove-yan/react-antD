@@ -6,17 +6,21 @@ import axios from '../../axios'
 
 export default class Header extends React.Component {
 
-    componentWillMount() {
+    constructor(props,state) {
 
-        this.setState({
-            userName: "马誌浩"
-        })
+        super(props);
+        this.state  = {
+            userName:'马誌浩'
+        }
         setInterval(() => {
             let sysTime = Util.formateDate(new Date().getTime());
             this.setState({
                 sysTime
             })
         }, 1000)
+    }
+
+    componentDidMount() {
         //this.getWeatherAPIData();
     }
 
@@ -43,7 +47,7 @@ export default class Header extends React.Component {
                 <Row className="header-top">
                     {
                         menuType?
-                            <Col span="6" className="logo">
+                            <Col span={6} className="logo">
                                 <img src="/assets/logo-ant.svg" alt=""/>
                                 <span>江西水务</span>
                             </Col>:''
@@ -56,10 +60,10 @@ export default class Header extends React.Component {
                 {
                     menuType?'':
                         <Row className="breadcrumb">
-                            <Col span="4" className="breadcrumb-title">
+                            <Col span={4} className="breadcrumb-title">
                                 { this.props.menuName }
                             </Col>
-                            <Col span="20" className="weather">
+                            <Col span={20} className="weather">
                                 <span className="date">{this.state.sysTime}</span>
                                 <span className="weather-img">
                                     <img src={this.state.dayPictureUrl} alt="" />

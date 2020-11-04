@@ -11,11 +11,8 @@ import 'echarts/lib/component/title'
 import 'echarts/lib/component/legend'
 import 'echarts/lib/component/markPoint'
 import ReactEcharts from 'echarts-for-react'
-export default class Bar extends React.Component{
 
-    componentWillMount(){
-        echarts.registerTheme('Imooc', echartTheme);
-    }
+export default class Bar extends React.Component{
 
     getOption = ()=>{
         let option = {
@@ -79,6 +76,7 @@ export default class Bar extends React.Component{
     }
 
     render(){
+        echarts.registerTheme('Imooc', echartTheme);
         return (
             <div>
                 <Card title="柱形图表之一">
